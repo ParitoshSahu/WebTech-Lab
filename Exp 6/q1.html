@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 6 - Q 1 </title>
+    <style>
+        body { 
+            background-color: darkslategray;
+            color: white;
+            text-align: center;
+            font-size: 36px;
+        }
+    </style>
+    <script>
+        function currentTime() {
+            var d = new Date();
+            var hh = d.getHours();
+            var mm = d.getMinutes();
+            var ss = d.getSeconds();
+            var session = 'AM';
+            
+            if (hh == 0) {
+                hh = 12;
+            }
+            if (hh > 12) {
+                hh = hh - 12;
+                session = 'PM'
+            }
+
+            /*hh = (hh < 10) ? '0' + hh : hh;
+            mm = (mm < 10) ? '0' + mm : mm;
+            ss*/
+
+            let time = hh + ':' + mm + ':' + ss + " " + session;
+            document.getElementById('clock').innerHTML = time;
+            let t = setTimeout(function(){ currentTime() }, 1000);
+        }
+        currentTime();
+    </script>
+</head>
+
+<!--body id = 'clock' onload=" currentTime()"-->
+<body id = 'clock' onload = 'currentTime()'>
+    <!--h1> My Digital Clock </h1-->
+</body>
+</html>

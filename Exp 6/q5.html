@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 6 - Q 5</title>
+    <script>
+        function getDetails(){
+            let students = [
+                {name: 'Paritosh', r_no: 'URK20CS2037', dob: '04-02-2000'},
+                {name: 'Anugrah', r_no: 'URK20CS2055', dob: '14-06-2002'},
+                {name: 'Lawda Lassan', r_no: 'URK20CS3026', dob: '20-11-2001'}
+            ];
+            let whole_sen = '';
+            for (var i=0; i< students.length; i++) {
+                var sen = students[i].name + "\'s Registration number is " + students[i].r_no + "<br/>";
+                //console.log(sen);
+                whole_sen = whole_sen + sen;
+                
+                
+            }
+            document.getElementById('para').innerHTML = whole_sen;
+        }
+        function clearDocument() {
+            document.getElementById('para').innerHTML = "";
+        }
+    </script>
+</head>
+<body>
+        <button onclick="getDetails()"> Get Details </button>
+        <button type="reset" onclick="clearDocument()"> Clear </button>
+        <div class="container">
+            <p id="para"> </p>
+        </div>
+</body>
+</html>

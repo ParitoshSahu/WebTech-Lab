@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function resize(element, percent){
+            element.style.fontSize = percent;
+        }
+    </script>
+    <style>
+        body {
+            background-color: cornflowerblue;
+            font-size: 16px;
+            color:gold;
+        }
+    </style>
+</head>
+<body>
+    <div id="para1" onmouseover="resize(this, '150%')" onmouseout="resize(this, '100%')">
+            We provide the best infrastructural facilities and a rich learning <br>
+            experience to educate, engage and empower our students to be engineers, <br> 
+            technologists, scientists, artists, professionals, managers and leaders. <br>
+            Programmes are offered in Engineering, Arts, Science, Media, <br>
+            Management & Health Sciences with student-centred pedagogy. <br>
+    </div>
+</body>
+</html>
