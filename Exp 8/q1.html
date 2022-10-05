@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 8 - Q1 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+    <div id="div1">
+        
+        Post your comment <br><br>
+            <form ng-controller="FrmController"></form>
+            <textarea ng-model="txtContainer" placeholder="Your comment" style="width: 550px"></textarea>
+            <button ng-click="btn_add()" style="margin-top: 10px"> Post comment</button>
+            <h4> Comments </h4>
+            <ul>
+                <li ng-repeat="comnt in comment"> {{comnt}} <a href="" style="float: right" ng-click="remItem($index)"> x </a> 
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function FrmController($scope) {
+            $scope.comment = [];
+            $scope.btn_add = function() {
+                if($scope.txtcomment !='') {
+                    $scope.comment.push($scope.txtcomment);
+                    $scope.txtcomment = "";
+                }
+            }
+            $scope.remItem = function($index) {
+                $scope.comment.splice($index, 1);
+            }
+        }
+    </script>
+</body>
+</html>
