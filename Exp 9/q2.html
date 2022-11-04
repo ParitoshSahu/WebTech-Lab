@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 9 - Q 2 </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script>
+        var app = angular.module('myapp', ['ngRoute']);
+        app.config(function($routeProvider) {
+            $routeProvider.when('/mydog', {
+                templateUrl : 'mydog.html'
+            }).when('/food', {
+                templateUrl : 'foods.html'
+            }).when('/place', {
+                templateUrl : 'place.html'
+            }).when('/movie', {
+                templateUrl : 'movie.html'
+            })
+        })
+    </script>
+</head>
+<body ng-app="myapp">
+    <div>
+        <h2> Exp 9 - Q 2 </h2>
+        <br> <hr> <br>
+        <h3> Select any link below: </h3>
+        <a href="#!mydog"> My Dog </a> <br><br>
+        <a href="#!food"> My Favorite Food </a> <br><br>
+        <a href="#!place"> My Favorite Place </a> <br><br>
+        <a href="#!movie"> My Favorite Movie </a> <br>
+    </div>
+    <div ng-view></div>
+</body>
+</html>
