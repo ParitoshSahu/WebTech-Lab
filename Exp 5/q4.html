@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 5 - Q 4 </title>
+    <script>
+        function convert() {
+            var val1 = document.getElementById('curr1').value;
+            var curr = document.getElementById('select_curr').value;
+            var val2;
+            if (curr === 'dollars') {
+                val2 = 67.12 * val1;
+                document.getElementById('second_curr').value = 'Rupees';
+            }
+            else if(curr === 'rupees') {
+                val2 = 0.015 * val1;
+                document.getElementById('second_curr').value = 'Dollars';
+            }
+            document.getElementById('curr2').value = val2;
+        }
+    </script>
+</head>
+<body>
+    <h1> Currency Converter </h1>
+    <br><br>
+    <fieldset>
+        
+        <label for="val1"> From </label>
+        <select id="select_curr">
+            <option value="default"> Select currency </option>
+            <option value="dollars"> Dollars </option>
+            <option value="rupees"> Rupees </option>
+        </select>
+        <input type="number" placeholder="Enter amount" name="curr1" id="curr1">
+
+        <label for="curr2"> &nbsp&nbsp&nbsp to &nbsp&nbsp&nbsp </label>
+        <input type="text" name="second_curr" id="second_curr" disabled>
+        <input type="number" placeholder="Converted amount" disabled name="curr2" id="curr2">
+        <br><br>
+        <button onclick="convert()"> Convert </button>
+        
+
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function len_finder(){
+            var str = document.getElementById("string").value;
+            var arr = str.split(' ');
+            var min_str = [];
+            var max_str = [];
+            var max = Number.MIN_VALUE;
+            var min = Number.MAX_VALUE;
+
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].length < min) min = arr[i].length;
+                if (arr[i].length > max) max = arr[i].length;
+            }
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i].length == min) min_str.push(arr[i]);
+                if (arr[i].length == max) max_str.push(arr[i]);
+            }
+
+            document.getElementById("smallest").innerHTML = "Shortest word(s): " + min_str.toString();
+            document.getElementById("longest").innerHTML = "Longest word(s): " + max_str.toString();
+        }
+    </script>
+</head>
+<body>
+    <h1> Shortest and Longest word finder</h1>
+    <br>
+        Enter a string : <input type="text" name="string" id="string"> </input>
+    <br>
+
+    <button id="submit" onclick="len_finder()"> Submit </button>
+    <br><br>
+
+    <div id="smallest">
+        <input type="text" placeholder="Smallest element"> </input>
+    </div>
+    <br>
+    <div id="longest">
+        <input type="text" placeholder="Longest element" > </input>
+    </div>
+</body>
+</html>

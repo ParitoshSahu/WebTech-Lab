@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 5 - Q 2 </title>
+    <script>
+        function bmi () {
+            var weight = document.getElementById('weight_in').value;
+            var height = document.getElementById('height_in').value;
+            var weight_opt = document.getElementById('weight_option_select').value;
+            var height_opt = document.getElementById('height_option_select').value;
+            if (weight_opt == 'lbs') 
+                weight *= 0.453592;
+            if (height_opt == 'ft')
+                height *= 0.3048;
+            var bmi = weight / (height * height);
+            document.getElementById('bmi_out').value = bmi;
+            var bodyty;
+            /*
+            Underweight: &lt; 18
+             Normal: 18 – 25
+             Overweight: 25 – 30
+             Obese: &gt; 30
+            */
+            if (bmi < 18) 
+                bodyty = "Underweight";
+            if (bmi >= 18 && bmi <= 25)
+                bodyty = 'Normal';
+            else if (bmi > 25 && bmi <= 30)
+                bodyty = 'Overweight';
+            else //if (bmi > 30)
+                bodyty = 'Obese';
+            
+            document.getElementById('body_ty').value = bodyty;
+        }
+    </script>
+</head>
+<body>
+    <h1> BMI calculator </h1>
+    <br><br>
+    <label for="weight_in"> Enter your weight : </label>
+    <input type="number" name="weight_in" id="weight_in" placeholder="Enter your weight">
+    <select name="weight_option_select" id="weight_option_select">
+        <option value="kgs"> Kgs </option>
+        <option value="lbs"> Lbs </option>
+    </select>
+    <br><br>
+    <label for="height_in"> Enter your height : </label>
+    <input type="number" name="height_in" id="height_in" placeholder="Enter your height">
+    <select name="height_option_select" id="height_option_select">
+        <option value="mtr"> meters </option>
+        <option value="ft"> feets </option>
+    </select>
+    <br><br>
+
+    <button onclick="bmi()"> Submit </button>
+    <br><br>
+    <label for="bmi_out"> Calculated bmi = </label>
+    <input type="text" disabled placeholder="BMI value" name="bmi_out" id="bmi_out">
+    <br><br>
+    <label for="body_ty"> Body type  = </label>
+    <input type="text" disabled placeholder="Body type" name="body_ty" id="body_ty">
+    <br><br>
+</body>
+</html>

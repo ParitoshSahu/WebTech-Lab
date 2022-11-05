@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 5 - Q 5 </title>
+    <script>
+        var head=0, tail=0;
+        function flip() {    
+            var choice = Math.floor((Math.random() * 2 ) + 1);
+            
+            if (choice == 1) { // Heads
+                document.getElementById('image').innerHTML = "<img src=head_coin.jpeg alt='head of coin'>";
+                head += 1;
+            }
+            else {
+                document.getElementById('image').innerHTML = "<img src=tail_coin.jpeg alt='tail of coin'>";
+                tail += 1;
+            }
+            document.getElementById('num_heads').value = head;
+            document.getElementById('num_tails').value = tail;
+        }
+    </script>
+</head>
+<body>
+    <h1> Flip the coin ! </h1>
+    <br><br>
+    <button id="flipp"> Click here to flip the coin </button>
+    <br><br>
+    <script>
+        const element = document.getElementById('flipp');
+        element.addEventListener('click', flip);
+    </script>
+    <div id="image">
+
+    </div>
+    <br><br>
+    <label for="num_heads"> Total no' of heads : </label>
+    <input type="text" disabled name="num_heads" id="num_heads">
+    <br><br>
+    <label for="num_tails"> Total no' of tails : </label>
+    <input type="text" disabled name="num_tails" id="num_tails">
+    
+</body>
+</html>

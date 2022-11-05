@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Exp 5 - Q 6 </title>
+    <script>
+        
+        function cake_bill() {
+            var small = parseInt(document.getElementById('small').value);
+            //console.log("Small value = " + toString(small));
+            var medium = parseInt(document.getElementById('medium').value);
+            //console.log("Medium value = " + toString(medium));
+            var large = parseInt(document.getElementById('large').value);
+            //console.log("Large value = " + toString(large));
+            var total = (small * 100) + (medium * 200) + (large * 400);
+
+            var per = document.querySelector("input[name='tip']:checked").value;
+            total = total + (total * 9 / 100);
+            total = total + (total * per / 100);
+            document.getElementById('amount').value = total;
+        }
+    </script>
+</head>
+<body>
+    <h1> Birthday Cake Order </h1>
+    <form action="#">
+        <fieldset>
+            <label for="small"> Number of 1/2 kg Cakes</label>
+            <input type="text" name="small" id="small" value="0">
+            <br><br>
+            <label for="medium"> Number of 1 kg Cakes</label>
+            <input type="text" name="medium" id="medium" value="0">
+            <br><br>
+            <label for="large"> Number of 2 kg Cakes</label>
+            <input type="text" name="large" id="large" value="0">
+            <br><br><br>
+
+            <label for="tip"> Tips : </label> <br>
+            <input type="radio" value="10" name="tip"> 10% <br>
+            <input type="radio" value="15" name="tip"> 15% <br>
+            <input type="radio" value="20" name="tip"> 20% <br>
+            <br><br>
+            <button onclick="cake_bill()"> Submit </button>
+            
+            <br><br>
+            <label for="amount"> Total amount = </label>
+            <input type="text" name="amount" id="amount" placeholder="Payable amount" disabled>
+        </fieldset>
+    </form>
+</body>
+</html>
